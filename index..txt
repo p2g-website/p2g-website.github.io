@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Path to Greatness (P2G)</title>
+  <meta name="description" content="Path to Greatness – An upcoming Fortnite esports team. Built on passion, loyalty, and community.">
+
+  <!-- Google Fonts & FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+  <style>
+    :root {
+      --gold: #FFD700;
+      --black: #000;
+      --dark: #111;
+      --white: #FFF;
+      --font-disp: 'Orbitron', sans-serif;
+      --font-body: 'Roboto', sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--gold);
+      overflow-x: hidden;
+    }
+    a { color: var(--gold); text-decoration: none; }
+
+    /* NAVBAR */
+    .navbar {
+      position: fixed; top:0; width:100%;
+      background: rgba(0,0,0,0.75);
+      display:flex; align-items:center; justify-content:space-between;
+      padding: 1rem 2rem; z-index:100;
+    }
+    .navbar .logo img { height:50px; }
+    .nav-links {
+      list-style:none; display:flex; gap:2rem;
+      transition: transform .3s ease;
+    }
+    .nav-links li a { text-transform: uppercase; font-weight:500; }
+    .menu-toggle { display:none; font-size:1.5rem; cursor:pointer; }
+
+    /* HERO */
+    .hero {
+      position:relative; height:100vh; width:100%;
+      display:flex; align-items:center; justify-content:center;
+      text-align:center; overflow:hidden;
+    }
+    .hero-video {
+      position:absolute; top:0; left:0; width:100%; height:100%;
+      object-fit:cover; opacity:.2;
+    }
+    .hero::before {
+      content:''; position:absolute;
+      top:0; left:0; width:100%; height:100%;
+      background: url('pattern.png') repeat; /* optional static pattern */
+      opacity:.1; mix-blend-mode:overlay;
+    }
+    .hero-content {
+      position:relative; z-index:2; max-width:800px; padding:0 1rem;
+      animation: fadeInUp .8s ease-out both;
+    }
+    .hero-content h1 {
+      font-family: var(--font-disp); font-size:4rem;
+      text-shadow: 0 0 20px var(--gold);
+      text-transform: uppercase;
+      animation: glitch 1s infinite;
+    }
+    .hero-content p {
+      font-size:1.2rem; margin:1rem 0 2rem;
+      letter-spacing:.5px;
+    }
+    .btn {
+      display:inline-block; padding:.8rem 2rem;
+      border:2px solid var(--gold); border-radius:30px;
+      text-transform: uppercase; font-weight:500;
+      transition: .3s;
+    }
+    .btn:hover {
+      background: var(--gold); color: var(--black);
+    }
+
+    /* SECTIONS & GRID */
+    main { margin-top:100vh; }
+    section { padding:6rem 2rem; max-width:1200px; margin:0 auto; }
+    h2 {
+      font-family: var(--font-disp); font-size:2.5rem;
+      text-shadow:0 0 10px var(--gold); position:relative;
+      margin-bottom:2rem; animation: fadeInUp .6s both;
+    }
+    h2::after {
+      content:''; display:block; width:80px; height:4px;
+      background: var(--gold); margin-top:.5rem;
+    }
+    .cards {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:1.5rem;
+    }
+    .card {
+      background: var(--dark); border:2px solid var(--gold);
+      padding:1.5rem; text-align:center; border-radius:8px;
+      transition: .3s; font-weight:500; animation: fadeInUp .5s both;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow:0 5px 20px var(--gold);
+      background: #222;
+    }
+    .coming {
+      background: var(--dark); padding:2rem;
+      border-left:4px solid var(--gold);
+      font-style:italic; text-align:center; opacity:.85;
+      animation: fadeInUp .5s both;
+    }
+
+    /* RESPONSIVE MENU */
+    @media(max-width:768px){
+      .menu-toggle { display:block; color:var(--gold); }
+      .nav-links {
+        position:absolute; top:70px; right:0; background:var(--black);
+        flex-direction:column; width:200px; transform:translateX(100%);
+      }
+      .nav-links.active { transform:translateX(0); }
+    }
+
+    /* FOOTER */
+    footer {
+      background:#111; text-align:center; padding:1.5rem 0;
+      font-size:.9rem; color:#555;
+      animation: fadeInUp .7s both;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeInUp {
+      from { opacity:0; transform: translateY(20px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 var(--gold), -2px 0 var(--gold); }
+      20% { text-shadow: -2px 0 var(--gold); }
+      40% { text-shadow: 2px 0 var(--gold), -2px 0 var(--gold); }
+      60% { text-shadow: -2px 0 var(--gold); }
+      80% { text-shadow: 2px 0 var(--gold), -2px 0 var(--gold); }
+      100% { text-shadow: 0 0 var(--gold); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="#" class="logo">
+      <img src="logo.png" alt="P2G Logo">
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#roster">Roster</a></li>
+      <li><a href="#academy">Academy</a></li>
+      <li><a href="#pro">Pro Area</a></li>
+      <li><a href="#merch">Merch</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <video class="hero-video" src="smoke-glitch.mp4" autoplay muted loop></video>
+    <div class="hero-content">
+      <h1>Path to Greatness</h1>
+      <p>The grind, the glory, the community.</p>
+      <a href="#about" class="btn">Learn More</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ABOUT US -->
+    <section id="about">
+      <h2>About Us</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;">
+        <div>
+          <p>We’re Path to Greatness, an upcoming esports team built on passion, loyalty, and the dream of creating something real. Our goal is to grow a strong community, compete at the highest level, and most importantly—have fun with our fans and team members along the way.</p>
+          <p>The journey hasn’t been easy. We’ve faced setbacks with players, finances, and trust… Each time we rose again, fueled by one name: Vexi. He coined “Path to Greatness” and helped us discover Snow and Menace. Together we reignited this dream.</p>
+          <!-- Paste your full origin story here -->
+        </div>
+        <div>
+          <img src="team-photo.jpg" alt="P2G Team Photo" style="width:100%;border-radius:8px;box-shadow:0 5px 15px rgba(0,0,0,.5);">
+        </div>
+      </div>
+    </section>
+
+    <!-- ROSTER -->
+    <section id="roster">
+      <h2>Our Roster</h2>
+      <div class="cards">
+        <div class="card">P2G Luke!</div>
+        <div class="card">P2G Maxrio</div>
+        <div class="card">P2G rwpeatsz</div>
+        <div class="card">P2G Juice!</div>
+        <div class="card">P2G Snipez</div>
+        <div class="card">P2G Phantom</div>
+      </div>
+    </section>
+
+    <!-- ACADEMY -->
+    <section id="academy">
+      <h2>P2G Academy</h2>
+      <div class="cards">
+        <div class="card">Sikbidmoan</div>
+        <div class="card">P2G Vexi</div>
+        <div class="card">P2G Snow</div>
+        <div class="card">P2G Menace</div>
+      </div>
+    </section>
+
+    <!-- PRO AREA -->
+    <section id="pro">
+      <h2>Pro Area</h2>
+      <div class="coming">Coming Soon – Our elite lineup is gearing up for the big leagues.</div>
+    </section>
+
+    <!-- MERCH -->
+    <section id="merch">
+      <h2>Merchandise</h2>
+      <div class="coming">Coming Soon – Gold-on-black jerseys, hoodies, and more.</div>
+    </section>
+
+    <!-- CONTACT & SOCIALS -->
+    <section id="contact">
+      <h2>Contact & Socials</h2>
+      <p>Follow the grind:</p>
+      <div style="display:flex;gap:1.5rem;font-size:1.8rem;margin-top:1rem;">
+        <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Path to Greatness. Built by the grind, powered by loyalty.</p>
+  </footer>
+
+  <!-- MENU TOGGLE SCRIPT -->
+  <script>
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
