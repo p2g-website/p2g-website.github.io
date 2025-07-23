@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Path to Greatness (P2G)</title>
+  <meta name="description" content="Path to Greatness – A rising Fortnite esports team built on loyalty, skill, and community. Join the journey.">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --gold: #FFD700;
+      --black: #000;
+      --dark: #111;
+      --font-title: 'Orbitron', sans-serif;
+      --font-body: 'Roboto', sans-serif;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: var(--font-body);
+      background: var(--black);
+      color: var(--gold);
+    }
+    .navbar {
+      position: fixed;
+      top: 0; left: 0; width: 100%;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 100;
+    }
+    .navbar img {
+      height: 50px;
+    }
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+    .nav-links li a {
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: 0.3s;
+      color: var(--gold);
+    }
+    .hero {
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hero video {
+      position: absolute;
+      top:0; left:0; width:100%; height:100%;
+      object-fit: cover; opacity: 0.15;
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      max-width: 700px;
+      animation: fadeUp 1s ease-in-out both;
+    }
+    .hero-content h1 {
+      font-family: var(--font-title);
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px var(--gold);
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+      margin: 1rem 0 2rem;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      border: 2px solid var(--gold);
+      border-radius: 25px;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: 0.3s;
+      color: var(--gold);
+      background: transparent;
+    }
+    .btn:hover {
+      background: var(--gold);
+      color: var(--black);
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      font-family: var(--font-title);
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: var(--gold);
+      margin-top: 10px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: var(--dark);
+      border: 2px solid var(--gold);
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+      font-weight: 500;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px var(--gold);
+    }
+    .coming {
+      background: var(--dark);
+      padding: 2rem;
+      border-left: 4px solid var(--gold);
+      font-style: italic;
+      opacity: 0.8;
+      text-align: center;
+    }
+    .socials {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.8rem;
+      margin-top: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #111;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <img src="p2g-logo.png" alt="P2G Logo" />
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#roster">Roster</a></li>
+    <li><a href="#academy">Academy</a></li>
+    <li><a href="#pro">Pro</a></li>
+    <li><a href="#merch">Merch</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Hero -->
+<header class="hero">
+  <video src="smoke-glitch.mp4" autoplay muted loop></video>
+  <div class="hero-content">
+    <h1>Path to Greatness</h1>
+    <p>The grind, the glory, the community.</p>
+    <a href="#about" class="btn">Learn More</a>
+  </div>
+</header>
+
+<main>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We’re Path to Greatness, an upcoming esports team built on passion, loyalty, and the dream of creating something real... (Insert full origin story here)</p>
+  </section>
+
+  <section id="roster">
+    <h2>Our Roster</h2>
+    <div class="cards">
+      <div class="card">P2G Luke!</div>
+      <div class="card">P2G Maxrio</div>
+      <div class="card">P2G rwpeatsz</div>
+      <div class="card">P2G Juice!</div>
+      <div class="card">P2G Snipez</div>
+      <div class="card">P2G Phantom</div>
+    </div>
+  </section>
+
+  <section id="academy">
+    <h2>P2G Academy</h2>
+    <div class="cards">
+      <div class="card">Sikbidmoan</div>
+      <div class="card">P2G Vexi</div>
+      <div class="card">P2G Snow</div>
+      <div class="card">P2G Menace</div>
+    </div>
+  </section>
+
+  <section id="pro">
+    <h2>Pro Area</h2>
+    <div class="coming">Coming Soon – Our elite lineup is training for something game-changing.</div>
+  </section>
+
+  <section id="merch">
+    <h2>Merchandise</h2>
+    <div class="coming">Coming Soon – Gold-on-black jerseys, hoodies, and more.</div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact & Socials</h2>
+    <p>Follow the grind:</p>
+    <div class="socials">
+      <a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target
